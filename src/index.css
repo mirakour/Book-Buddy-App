@@ -1,13 +1,317 @@
-body {
-  font-family: Georgia, serif;
-  background-color: #f8f8f8;
+:root {
+  --primary-bg: #3e3d3d;
+  --secondary-bg: #3e3d3d;
+  --primary-text: #fcfcfc;
+  --secondary-text: #fcfcfc;
+  --accent-orange: #ff9500;
+  --accent-yellow: #fdd835;
+  --border-radius: 12px;
+  --font-main: 'Inter', sans-serif;
+  --font-alt: 'Roboto', sans-serif;
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
 }
 
-#logo-image {
-  width: 30px;
-  margin-right: 10px;
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  line-height: 1.6;
+  padding: 1rem;
 }
 
-/* Add your own custom styles here */
+a {
+  color: var(--accent-orange);
+  text-decoration: none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--accent-orange);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: var(--accent-yellow);
+  color: var(--primary-text);
+}
+
+input,
+select,
+textarea {
+  padding: 0.6rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-family: var(--font-main);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.navbar {
+  background: var(--primary-bg);
+  border-bottom: 1px solid #ddd;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  margin-left: 1rem;
+  font-weight: 1000;
+}
+
+.card {
+  background: var(--secondary-bg);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--border-radius);
+}
+
+.books-page {
+  padding: 2rem;
+  text-align: center;
+}
+
+.books-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #d1cfcf;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  width: 60%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 1px solid #605d5d;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.book-card {
+  background: #858484;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+}
+
+.book-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book-card h3 {
+  margin: 0.8rem 0 0.2rem;
+  color: #111;
+}
+
+.book-card .author {
+  color: #ebe5e5;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.details-button {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background-color: #ff9500;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.details-button:hover {
+  background-color: #e07b00;
+}
+
+.book-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.book-detail img {
+  width: 300px;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.book-info {
+  max-width: 600px;
+  text-align: center;
+}
+
+.book-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.book-info h4 {
+  font-size: 1.2rem;
+  color: #878484;
+  margin-bottom: 1rem;
+}
+
+.book-info p {
+  line-height: 1.6;
+  color: #d1cece;
+  margin-bottom: 1.5rem;
+}
+
+.reserve-btn,
+.return-btn {
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.reserve-btn {
+  background-color: #ff9500;
+}
+
+.reserve-btn:hover {
+  background-color: #e07b00;
+}
+
+.return-btn {
+  background-color: #f54242;
+}
+
+.return-btn:hover {
+  background-color: #d63030;
+}
+
+.login-msg,
+.unavailable-msg {
+  color: #626060;
+  font-style: italic;
+}
+
+.account-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #6c6a6a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.account-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.account-container h3 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #a7a5a5;
+  padding-bottom: 0.5rem;
+}
+
+.reservation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.reservation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9b9797;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.reservation-card img {
+  width: 140px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.reservation-info h4 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.return-btn {
+  margin-top: 0.5rem;
+  background-color: #e5a905;
+  color: rgb(108, 106, 106);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.return-btn:hover {
+  background-color: #d63636;
+}
+
+.auth-form {
+  padding: 0.5rem 1rem;
+  width: 60%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 1px solid #605d5d;
+  margin: 2rem auto;
+  font-size: 1rem;
+  background: #5c5b5b;
+  
+}
