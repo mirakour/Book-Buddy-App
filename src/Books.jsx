@@ -35,6 +35,15 @@ export default function Books() {
             <img src={book.coverimage} alt={book.title} />
             <h3>{book.title}</h3>
             <p className="author">{book.author}</p>
+            <p
+              style={{
+                color: book.available ? "lightgreen" : "#ff4d4d",
+                fontWeight: 600,
+              }}
+            >
+              {book.available ? "Available" : "Unavailable"}
+            </p>
+            <br></br>
             <Link to={`/books/${book.id}`} className="details-button">
               View Details
             </Link>
